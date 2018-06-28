@@ -1,0 +1,70 @@
+<small>Simply Dark pre-alpha</small><br>
+<small>Release 0.05a</small>
+<body onkeydown="press()">
+<link href="https://fonts.googleapis.com/css?family=Cardo" rel="stylesheet">
+<div>
+<p id="text">You wake up in a basement. You're not quite sure how you got there, in fact, you cannot remember anything other than the English language. You try to remember your name...<br><br>What is your name? (type what you think it is below)</p>
+<input id="input">
+<script>
+var area = 1
+function press() {
+if(event.keyCode == "13") {
+if(area == 1) {
+  area += 1
+}
+if (area == 2) {
+  area += 1
+  var name = document.getElementById("input").value
+  document.getElementById("text").innerHTML = "After thinking about it for a while, you finally remember your name: " + name + ". After finally remembering this, you find the door that leads out of the basement. It's locked. You go back into the basement and find a crowbar and a hacksaw. <br><br> Which one do you take?"
+  document.getElementById("input").value = ""
+}
+if (area == 3) {
+if (document.getElementById("input").value == "crowbar") {
+  area += 1
+    document.getElementById("text").innerHTML = "You take the crowbar. You now see a second possible exit: the window. You wonder which exit would be better; the door or the window.<br><br>What exit do you take?"
+  document.getElementById("input").value = ""
+}
+if (document.getElementById("input").value == "hacksaw") {
+    area += 2
+document.getElementById("text").innerHTML = "You take the hacksaw and saw off the doorknob. The door is now opened, but you notice someone in the kitchen. You peek in the room to see who it is. He was the only person home, so you assume he was the reason you ended up in that basement. You still have that hacksaw, so you can either <s>kill</s> attack him, or use the saw to break the window.<br><br>Do you attack or flee?"
+  document.getElementById("input").value = ""
+}
+if (area == 4) {
+  document.getElementById("text").innerHTML = "You use the crowbar to break the window. Once you do though, you hear footsteps coming toward the door. You assume it's the person that bought you here. He opens the basement door, and starts walking towards you. Do you...<br><br><s>kill</s> attack him or flee?"
+  document.getElementById("input").value = ""
+}
+}
+}
+}
+</script>
+</div>
+<style>
+  red {
+    color: red;
+  }
+div {
+  text-align: center;
+  margin: 300px;
+}
+input {
+  height: 50px;
+  width: 200px;
+  font-size: 30px;
+ background: #7c7c7c;
+  border: none;
+  color: white;
+  opacity: 0.5;
+  outline: none;
+  padding:8px;
+  font-family: 'Cardo', serif;
+}
+
+p {
+   font-family: 'Cardo', serif;
+   color: #969696
+}
+body {
+  background: linear-gradient(to bottom, #5e5e5e -3%, #000000 93%);
+}
+
+</style>
